@@ -12,23 +12,32 @@
 				<h1 class="blog-title">$Title</h1>
 				
 				<div class="blog-main-image">
-					<img src="http://placehold.it/765x362" alt="" />
+					<% with $Photo.SetWidth(750) %>
+    				<img class="my-custom-class" src="$URL" alt="" width="$Width" height="”$Height”" />
+    				<% end_with %>
 					<div class="tag"><i class="fa fa-file-text"></i></div>
 				</div>
 				
 				<div class="blog-bottom-info">
 					<ul>
-						<li><i class="fa fa-calendar"></i> July 30, 2014</li>
+						<li><i class="fa fa-calendar"></i> $Date.Long</li>
 						<li><i class="fa fa-comments-o"></i> 3 Comments</li>
 						<li><i class="fa fa-tags"></i> Properties, Prices, best deals</li>
 					</ul>
 					
-					<div id="post-author"><i class="fa fa-pencil"></i> By John Doe</div>
+					<div id="post-author"><i class="fa fa-pencil"></i> $Author</div>
+					
 				</div>
 				
 				<div class="post-content">
 					$Content
 				</div>
+				<% if $Brochure %>
+      				<div class="row">
+        				<div class="col-sm-12"><a class="btn btn-warning btn-block" href="$Brochure.URL"> Download brochure ($Brochure.Extension, $Brochure.Size)</a>
+        				</div>
+      				</div>
+    			<% end_if %>
 				
 				<div class="share-wraper col-sm-12 clearfix">
 					<h5>Share this Post:</h5>
@@ -39,6 +48,7 @@
 						<li><a target="_blank" href="http://pinterest.com/pin/create/button/?url=http://www.wiselythemes.com/html/cozy/blog-detail.html&amp;description=Cozy%20Blog%20Post&amp;media=http%3A%2F%2Fwww.wiselythemes.com%2Fhtml%2Fcozy%2Fimages%2Fnews-img1.jpg"><i class="fa fa-pinterest"></i></a></li>
 						<li><a href="mailto:?subject=Check%20out%20this%20blog%20post%20from%20Cozy%20Real%20Estate!&amp;body=http://www.wiselythemes.com/html/cozy/blog-detail.html"><i class="fa fa-envelope"></i></a></li>
 					</ul>
+					
 					
 					<a class="print-button" href="javascript:window.print();">
 						<i class="fa fa-print"></i>
