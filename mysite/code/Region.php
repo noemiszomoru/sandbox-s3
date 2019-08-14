@@ -9,7 +9,15 @@ class Region extends DataObject
     );
 
     private static $has_one = array(
-        'Photo' => 'Image'
+        'Photo' => 'Image',
+        'RegionsPage' => 'RegionsPage'
+    );
+
+    private static $summary_fields = array(
+        'Photo.Filename' => 'Photo file name',
+        'GridThumbnail' => '',
+        'Title' => 'Title of region',
+        'Description' => 'Short description'
     );
 
     public function getCMSFields()
@@ -24,5 +32,14 @@ class Region extends DataObject
         $uploader->getValidator()->setAllowedExtensions(array('png', 'gif', 'jpeg', 'jpg'));
 
         return $fields;
+    }
+
+    public function getGridThumbnail()
+    {
+        if ($this->Photo()->exists()) {
+            return $this->Photo()->SetWidth(100);
+        }
+
+        return "(no image)";
     }
 }

@@ -9,63 +9,22 @@
 						
 						<!-- BEGIN BLOG LISTING -->
 						<div class="grid-style1 clearfix">
-							<div class="item col-md-12"><!-- Set width to 4 columns for grid view mode only -->
-								<div class="image image-large">
-									<a href="#">
-										<span class="btn btn-default"><i class="fa fa-file-o"></i> Read More</span>
-									</a>
-									<img src="http://placehold.it/720x255" alt="" />
+							 <% loop $Regions %>
+								<div class="item col-md-12"><!-- Set width to 4 columns for grid view mode only -->
+									<div class="image image-large">
+										<a href="#">
+											<span class="btn btn-default"><i class="fa fa-file-o"></i> Read More</span>
+										</a>
+										$Photo.CroppedImage(720,255)
+									</div>
+									<div class="info-blog">
+										<h3>
+											<a href="#">$Title</a>
+										</h3>
+										<p>$Description</p>
+									</div>
 								</div>
-								<div class="info-blog">
-									<h3>
-										<a href="#">The Northeast</a>
-									</h3>
-									<p>Sed rutrum urna id tellus euismod gravida. Praesent placerat, mauris ac pellentesque fringilla, tortor libero condimen. Aliquam fermem tum nulla felis, sed molestie libero porttitor in.</p>
-								</div>
-							</div>
-
-							<div class="item col-md-12"><!-- Set width to 4 columns for grid view mode only -->
-								<div class="image image-large">
-									<a href="#">
-										<span class="btn btn-default"><i class="fa fa-file-o"></i> Read More</span>
-									</a>
-									<img src="http://placehold.it/720x255" alt="" />
-								</div>
-								<div class="info-blog">
-									<h3>
-										<a href="#">The Northwest</a>
-									</h3>
-									<p>Sed rutrum urna id tellus euismod gravida. Praesent placerat, mauris ac pellentesque fringilla, tortor libero condimen. Aliquam fermem tum nulla felis, sed molestie libero porttitor in.</p>
-								</div>
-							</div>
-							<div class="item col-md-12"><!-- Set width to 4 columns for grid view mode only -->
-								<div class="image image-large">
-									<a href="#">
-										<span class="btn btn-default"><i class="fa fa-file-o"></i> Read More</span>
-									</a>
-									<img src="http://placehold.it/720x255" alt="" />
-								</div>
-								<div class="info-blog">
-									<h3>
-										<a href="#">The Southeast</a>
-									</h3>
-									<p>Sed rutrum urna id tellus euismod gravida. Praesent placerat, mauris ac pellentesque fringilla, tortor libero condimen. Aliquam fermem tum nulla felis, sed molestie libero porttitor in.</p>
-								</div>
-							</div>
-							<div class="item col-md-12"><!-- Set width to 4 columns for grid view mode only -->
-								<div class="image image-large">
-									<a href="#">
-										<span class="btn btn-default"><i class="fa fa-file-o"></i> Read More</span>
-									</a>
-									<img src="http://placehold.it/720x255" alt="" />
-								</div>
-								<div class="info-blog">
-									<h3>
-										<a href="#">The Southwest</a>
-									</h3>
-									<p>Sed rutrum urna id tellus euismod gravida. Praesent placerat, mauris ac pellentesque fringilla, tortor libero condimen. Aliquam fermem tum nulla felis, sed molestie libero porttitor in.</p>
-								</div>
-							</div>
+							<% end_loop %>
 
 						</div>
 						<!-- END BLOG LISTING -->
