@@ -14,3 +14,7 @@ SSViewer:
 #   extensions:
 #     - FileExtension
 
+ SiteConfig:
+      extensions:
+        - SiteConfigExtension
+
